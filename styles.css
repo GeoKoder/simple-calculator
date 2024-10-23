@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: xarial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f4f8;
+}
+
+.calculator {
+    width: 350px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.calculator:hover {
+    background-color: #d4d4d4;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+                rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, 
+                rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+
+.display input {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2rem;
+    width: 100%;
+    height: 60px;
+    color: #333;
+    text-align: right;
+    border: none;
+    background-color: #e9f0fa;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease, 
+                background-color 0.3s ease;
+}
+
+  input:focus {
+    border-color: #F08080; 
+    background-color:  #ffeded; 
+    outline: none; 
+  }
+  
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.equal {
+    background-color: #f1b24a;
+    /* grid-column: span 2; */
+    font-size: 2rem;
+    transition: background-color 0.1s ease, transform 0.2s ease;
+}
+
+.equal:active {
+    background-color: #d6902d; 
+    transform: scale(1.05);
+}
+
+button {
+    height: 60px;
+    font-size: 1.rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #3a6ea5;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #5591c6;
+}
+
+button:active {
+    background-color: #2c5491;
+    transform: scale(1.1);
+}
+
+
+
+@media (max-width: 500px) {
+    .calculator {
+      width: 100%;
+      max-width: 300px;
+    }
+  
+    button {
+      font-size: 1.2rem;
+      height: 50px;
+    }
+  
+    .display input {
+      font-size: 1.5rem;
+      height: 50px;
+    }
+}
+  
