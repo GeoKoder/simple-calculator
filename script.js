@@ -16,18 +16,22 @@ function deleteLastCharacter() {
 }
 
 // Function to calculate the result
-function calculate() {
+function calculateResult() {
     let expression = display.value;
     
     // Replaces the square root symbol with the Math.sqrt function
-    expression = expression.replace(/√/g, 'Math.sqrt(') + ')';
-    console.log(expression);
+    if (expression.includes('√')){
+        expression = expression.replace(/√/g, 'Math.sqrt(') + ')';
+    }
+    
     // Replaces the percentage symbol with the division by 100 function
-    expression = expression.replace(/%/g, '/100');
+    if (expression.includes('%')){
+        expression = expression.replace(/%/g, '/100');
+    }
 
     // Checks for errors and evaluates the expression
     try {
-        display.value = eval(expression).toFixed(4);
+        display.value = eval(expression);
     } catch (error) {
         display.value = "Error"; 
     }
