@@ -59,7 +59,7 @@ document.addEventListener("keydown", function(event) {
     }
     // Handle the Enter key to calculate
     else if (key === 'Enter' || key === '=') {
-        calculate();
+        calculateResult();
     }
     // Handle the Backspace key to clear the last character
     else if (key === 'Backspace') {
